@@ -1,0 +1,244 @@
+/* Minimalist and modern UI design */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f2f2f2; /* Updated background color */
+    color: #444; /* Updated text color */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1d448a; /* Updated heading color to Adani blue */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #777; /* Updated paragraph color */
+    margin-bottom: 20px;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 480px;
+}
+
+.search-box {
+    display: flex;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#query {
+    flex: 1;
+    padding: 15px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+}
+
+#search-button {
+    padding: 0 20px;
+    background: #1d448a; /* Updated button color to Adani blue */
+    border: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+#search-button i {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+/* Contribution link styles */
+
+.contribute-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.contribute-link {
+    color: #1d448a;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.contribute-link:hover {
+    text-decoration: underline;
+}
+
+/* Contribution form styles */
+.contribution-form-container {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 600px; /* Increased max-width for larger form */
+}
+
+.contribution-form {
+    background: #fff;
+    border-radius: 20px; /* Increased border-radius for rounded corners */
+    border: 2px solid #1d448a; /* Increased border thickness */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px; /* Increased padding for more spacing */
+}
+
+.form-group {
+    margin-bottom: 30px; /* Increased margin-bottom for more spacing */
+}
+
+input[type="text"],
+textarea {
+    width: calc(100% - 30px); /* Reduced width for smaller fields */
+    padding: 10px; /* Reduced padding for smaller fields */
+    border: none;
+    border-radius: 10px; /* Increased border-radius for rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #1d448a;
+    color: #fff;
+    border: none;
+    border-radius: 10px; /* Increased border-radius for rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #305f95;
+}
+/* Background Shapes */
+.background-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #1d448a 0%, #305f95 100%); /* Updated gradient colors to Adani blue shades */
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+    z-index: -1; /* Ensure shapes stay behind content */
+}
+
+/* Cards */
+.results-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+    grid-gap: 20px;
+}
+
+.card {
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card::before,
+.card::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.card::before {
+    top: 0;
+    left: 0;
+}
+
+.card::after {
+    bottom: 0;
+    right: 0;
+}
+
+.card:hover::before,
+.card:hover::after {
+    opacity: 0.05; /* Lower opacity on hover for subtle effect */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Scale up the card on hover */
+}
+
+.card-header {
+    background: #1d448a; /* Updated header background color to Adani blue */
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h2 {
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.copy-button {
+    background: #fff;
+    color: #1d448a; /* Updated button color to Adani blue */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.copy-button:hover {
+    background: #1d448a; /* Updated button hover color to Adani blue */
+    color: #fff;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.examples {
+    background: #f5f5f5;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-left: 3px solid #1d448a; /* Updated border color to Adani blue */
+}
+
+/* Contribution Success Page */
+
+.success-actions {
+    margin-top: 20px;
+}
+
+.go-back {
+    color: #1d448a;
+    text-decoration: none;
+}
+
+.go-back i {
+    margin-right: 5px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="background-painting"></div> <!-- Background Painting -->
+        <div class="header">
+            <h1><i class="fas fa-lightbulb"></i> Your Search Results</h1>
+            <p>Here's what we found for you</p>
+            <a href="/" class="go-back"><i class="fas fa-arrow-left"></i> Go back to search</a>
+        </div>
+        <div class="results-container">
+            {% for index, row in results.iterrows() %}
+                <div class="card">
+                    <div class="card-header">
+                        <h2>{{ row['function_name'] }}</h2>
+                        <button class="copy-button" onclick="copyFunctionName('{{ row['function_name'] }}')">Copy</button>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ row['description'] }}</p>
+                        <p class="examples"><strong>Examples:</strong> {{ row['examples'] }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        function copyFunctionName(name) {
+            const el = document.createElement('textarea');
+            el.value = name;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        }
+    </script>
+</body>
+</html>

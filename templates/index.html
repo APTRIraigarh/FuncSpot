@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Search</title>
+    <style>
+        .navbar {
+            background-color: transparent;
+            overflow: hidden;
+        }
+        
+        .logo {
+            float: left;
+            display: block;
+            padding: 10px 20px;
+        }
+        
+        .logo img {
+            height: 5rem; /* Adjust height as needed */
+            width: auto;
+        }
+        .logo1 img{
+            height:2.5rem;
+        }
+        .logo1{
+            position:absolute;
+            left:85%;
+            top:5.5%;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='adani.jpeg') }}" alt="adani-pic">
+        </div>
+        <div class="logo1">
+            <img src="{{ url_for('static', filename='ACoE.png') }}" alt="adani-pic">
+        </div>
+    </div>
+    <div class="container">
+        <div class="background-shape"></div> <!-- Background Shape -->
+        <div class="header">
+            <h1><i class="fa fa-code" aria-hidden="true"></i> Discover Functions</h1>
+            <p>Explore a universe of functions with a single search</p>
+        </div>
+        <div class="search-container">
+            <form class="search-form" action="/search" method="post">
+                <div class="search-box">
+                    <input type="text" name="query" id="query" placeholder="Search for functions..." autocomplete="off">
+                    <button type="submit" id="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="contribute-container">
+            <a href="/contribute" class="contribute-link">Contribute a Function</a>
+        </div>
+    </div>
+</body>
+</html>
